@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+
+\usepackage{setspace}
+\usepackage[letterpaper,margin=1in]{geometry}
+
+\title{Nabi - A Preventative Solution Against Javascript and Scriptless Tabnabbing Attacks}
+\author{Michael Baraboo, William Schattgen, Christopher To}
+\date{20 April 2015}
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+\begin{abstract}
+  
+\end{abstract}
+
+\begin{doublespace}
+
+\section{Introduction}
+The use of the internet has become an almost unavoidable part of life. As the internet becomes more involved with everyday life, users put more and more of their personal information online. Phishing is the process of stealing, gaining access to, or recording personal accounts or information. Phishing attacks try to convince the target to give up personal information such as passwords, account names, credit card numbers, addresses, and other valuable information or credentials. Phishing has many mediums such as email, phone, websites, and even mail. This information can be used in a variety of destructive ways from the thievery of personal assets to identity theft. Tabnabbing is a phishing technique that relies on the user’s trust of websites they have already viewed and considered safe. The site is changed to a malicious site when the user is not viewing the page. This is done using JavaScript to change the page while the tab is not in focus or by using the meta tag with a timer to redirect the page at a time when the user is most likely not viewing it. Phishing attacks are becoming more common as web use increases, and as users become more aware of phishing attacks, phishing techniques adapt to continue to be effective.
+
+\section{Background}
+Phishing attacks are not a new occurrence; they have been around since there has been personal data or credentials to steal. However, ``tabnabbing'' is a relatively recent addition to the list of phishing techniques, coined by Aza Raskin in 2010 \cite{Raskin}. Tabnabbing is a phishing technique that takes advantage of two commonly exhibited user behaviors for modern browser usage. The first is that users often open several tabs in a browser window and navigate between them without closing previous tabs. The second is the user tendency to leave browsers open for extended periods of time while away from their computers in order to access the pages more easily upon their return. 
+
+\subsection{TabShots}
+One approach to combating tabnabbing is an extension known as TabShots, a program created by Philippe De Ryck, Nick Nikiforakis, Lieven Desmet, and Wouter Joosen \cite{TabShots}. TabShots continuously takes screenshots of tab and compares them to the previous ones and highlights any changes in red yellow or green depending on how many changes were made. When the user navigates back to a tab that has been altered in a tabnabbing attack, they will see the highlighted portions of the screen and receive a notification that the tab has been altered. 
+
+\subsection{TabSol}
+Another defence against tabnabbing, TabSol created by Amandeep Singh and Somanath Tripathy \cite{TabSol}, compares the hash values of the web page to detect changes and notifies the user. 
+
+\subsection{NoTabNab}
+Another extension, NoTabNab created by Seckin Anil Unlu and Kemal Bicakci \cite{NoTabNab}, notifies the user when the favicon or the tab name change as well as when a new layer is added to an inactive tab. 
+
+\section{Proposal and Methodology}
+Each of these approaches has advantages and disadvantages, but one particular disadvantage all these methods possess is that they are all only detection programs. We believe that a preventative method is a more effective way to combat tabnabbing.
+We propose a web browser extension to prevent attackers from executing their tabnabbing attacks. Aza Raskin suggested the use of the NoScript add-on for the Firefox web browser to eliminate the use of JavaScript across all tabs in the browser.  Our proposed system is similar to this approach, but is implemented in the Google Chrome web browser and differs from Raskin’s proposed solution in some key elements. Unlike NoScript, which blocks all javascript across every tab within a browser window, our extension will block javascript specifically in all non-active tabs that are not part of a trusted whitelist.  
+
+\section{Results}
+
+\section{Conclusion}
+
+\end{doublespace}
+
+
+\bibliographystyle{plain}
+\bibliography{Bibliography}
+
+\end{document}

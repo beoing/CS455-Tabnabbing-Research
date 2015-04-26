@@ -1,0 +1,26 @@
+javascript or html meta page
+
+parse:
+meta refresh
+	-positive -> warning, remove meta code
+	need to forbid meta in noscript tags
+onblur and dom editing
+	simply confuse with large volume of method calls
+
+can insert delayed html code w/ delayed js code
+
+Section
+Intro 
+Background
+
+Proposal
+-ours first
+-introduce others, then compare and contrast
+-(not the big one)
+Conclusion
+
+Plan: 
+parse meta for refresh
+activate NoScript for pages out of focus / on blur
+
+
