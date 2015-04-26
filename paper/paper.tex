@@ -2,10 +2,11 @@
 
 \usepackage{setspace}
 \usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{verbatim}
 
-\title{Nabi - A Preventative Solution Against Javascript and Scriptless Tabnabbing Attacks}
+\title{Nabi - A Preventative Solution Against JavaScript and Scriptless Tabnabbing Attacks}
 \author{Michael Baraboo, William Schattgen, Christopher To}
-\date{20 April 2015}
+\date{4 May 2015}
 \begin{document}
 \maketitle
 
@@ -18,23 +19,43 @@
 \begin{doublespace}
 
 \section{Introduction}
+\begin{comment}
 The use of the internet has become an almost unavoidable part of life. As the internet becomes more involved with everyday life, users put more and more of their personal information online. Phishing is the process of stealing, gaining access to, or recording personal accounts or information. Phishing attacks try to convince the target to give up personal information such as passwords, account names, credit card numbers, addresses, and other valuable information or credentials. Phishing has many mediums such as email, phone, websites, and even mail. This information can be used in a variety of destructive ways from the thievery of personal assets to identity theft. Tabnabbing is a phishing technique that relies on the user’s trust of websites they have already viewed and considered safe. The site is changed to a malicious site when the user is not viewing the page. This is done using JavaScript to change the page while the tab is not in focus or by using the meta tag with a timer to redirect the page at a time when the user is most likely not viewing it. Phishing attacks are becoming more common as web use increases, and as users become more aware of phishing attacks, phishing techniques adapt to continue to be effective.
+\end{comment}
 
 \section{Background}
+\begin{comment}
 Phishing attacks are not a new occurrence; they have been around since there has been personal data or credentials to steal. However, ``tabnabbing'' is a relatively recent addition to the list of phishing techniques, coined by Aza Raskin in 2010 \cite{Raskin}. Tabnabbing is a phishing technique that takes advantage of two commonly exhibited user behaviors for modern browser usage. The first is that users often open several tabs in a browser window and navigate between them without closing previous tabs. The second is the user tendency to leave browsers open for extended periods of time while away from their computers in order to access the pages more easily upon their return. 
+\end{comment}
 
 \subsection{TabShots}
+\begin{comment}
 One approach to combating tabnabbing is an extension known as TabShots, a program created by Philippe De Ryck, Nick Nikiforakis, Lieven Desmet, and Wouter Joosen \cite{TabShots}. TabShots continuously takes screenshots of tab and compares them to the previous ones and highlights any changes in red yellow or green depending on how many changes were made. When the user navigates back to a tab that has been altered in a tabnabbing attack, they will see the highlighted portions of the screen and receive a notification that the tab has been altered. 
+Performance inpact on larger screens
+Relies on user to make decision
+\end{comment}
+
+One approach to combating tabnabbing is a Google Chrome browser extension known as TabShots, which was created by Philippe De Ryck, Nick Nikiforakis, Lieven Desmet, and Wouter Joosen \cite{TabShots}.  To detect whether a tab has changed or not while not in focus, TabShots uses visual comparison of the tab's appearance before and after the change in the user's focus.  The extension records screenshots of the currently focused tab at regular intervals, using a simple Google Chrome API call and storing the screenshot as a data URL.  The program also keeps record of the tab's favicon, or the icon displayed in the tab's url and title space.  These two sets of images provide the basis for comparison when a tab regains focus.
+
+When any tab regains focus, TabShots compares a new screenshot of the tab and it's current favicon to the most recent stored screenshot and favicon that was recorded before the tab lost focus.  The small favicons are compared by source, and the screenshots are compared in a visually divided manner using the HTML5 canvas element.  The screenshots are divided in a raster of fixed-size tiles, and each tile in the new screenshot is compared to the most recently stored screenshot of the tab.  If the tiles do not match exactly, that area is marked as changed.  The HTML5 canvas element provides powerful image manipulation capabilities that allowed the rastering and comparison algorithms to be implemented.
+
+Once the differences in the current tab from its previous version are calculated, an overlay is injected into the page that shows the differences in semi-transparent red.  The overlay is both transparent in both visibility and mouse events, so no mouse and keyboard events will be affected it.  The overlay is constantly checked for its presence by the extension whenever an element is removed, ensuring that a malicious page will not be able to remove the overlay without notifying the extension and user.  TabShots also places an icon onto the browser's toolbar that changes color in response the amount of changes on the currently focused tab.  The icon serves as an unobtrusive security layer that will remain in view should the overlay be removed.
 
 \subsection{TabSol}
+\begin{comment}
 Another defence against tabnabbing, TabSol created by Amandeep Singh and Somanath Tripathy \cite{TabSol}, compares the hash values of the web page to detect changes and notifies the user. 
+\end{comment}
 
 \subsection{NoTabNab}
+\begin{comment}
 Another extension, NoTabNab created by Seckin Anil Unlu and Kemal Bicakci \cite{NoTabNab}, notifies the user when the favicon or the tab name change as well as when a new layer is added to an inactive tab. 
+\end{comment}
 
 \section{Proposal and Methodology}
+\begin{comment}
 Each of these approaches has advantages and disadvantages, but one particular disadvantage all these methods possess is that they are all only detection programs. We believe that a preventative method is a more effective way to combat tabnabbing.
 We propose a web browser extension to prevent attackers from executing their tabnabbing attacks. Aza Raskin suggested the use of the NoScript add-on for the Firefox web browser to eliminate the use of JavaScript across all tabs in the browser.  Our proposed system is similar to this approach, but is implemented in the Google Chrome web browser and differs from Raskin’s proposed solution in some key elements. Unlike NoScript, which blocks all javascript across every tab within a browser window, our extension will block javascript specifically in all non-active tabs that are not part of a trusted whitelist.  
+\end{comment}
 
 \section{Results}
 
@@ -44,6 +65,6 @@ We propose a web browser extension to prevent attackers from executing their tab
 
 
 \bibliographystyle{plain}
-\bibliography{Bibliography}
+\bibliography{bibliography}
 
 \end{document}
