@@ -5,4 +5,10 @@ Lieven Desmet Wouter~Joosen Philippe De~Ryck, Nick~Nikiforakis.
 \newblock Tabshots: Client-side detection of tabnabbing attacks, 2013.
 \newblock 978-1-4503-1767-2.
 
+\bibitem{TabSol}
+Amandeep Singh and Somanath Tripathy.
+\newblock Tabsol: An efficient framework to defend tabnabbing.
+\newblock IEEE, 2014.
+\newblock 978-1-4799-8084-0.
+
 \end{thebibliography}
