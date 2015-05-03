@@ -1,115 +1,41 @@
-/*
-chrome.contentSettings.javascript.set({
-    primaryPattern: '<all_urls>',
-	setting: 'block'
-});
-*/
-
-/*
-chrome.tabs.onCreated.addListener(function callback(tab){
-
-        var url = 'http://candybox2.net/*';
-        var json = { };
-	json['primaryPattern'] = url;
-	json['setting'] = 'allow';
-
-        console.log(json['primaryPattern']);
-	chrome.contentSettings.javascript.set(json);
-
-});*/
-
 var lasttab;
-
+var lasttabid;
 chrome.tabs.onHighlightChanged.addListener(function callback(tab){
 
-
+	//Block the tab you just came from
 	if (lasttab != null)
 	{
 		var url = lasttab;
-        	var json = { };
+        var json = { };
+		
 		json['primaryPattern'] = url;
 		json['setting'] = 'block';
-        	console.log(json['primaryPattern']);
+        
+		console.log(json['primaryPattern']);
 		chrome.contentSettings.javascript.set(json);
+		chrome.tabs.reload(lasttabid);
 	}
-
-/*
-	var newurl;
-	var newjson = { };
-	var activeurl;
-*/
-	//chrome.tabs.onActivated.addListener(function callback(activeInfo){
 
 		var newurl;
 		var newjson = { };
 		var activeurl;
 
-		chrome.tabs.getSelected(null, function(tab) {//problem
+		//Unblocks the active tab
+		chrome.tabs.getSelected(null, function(tab) {
+
         	newurl = tab.url;
       		activeurl = newurl.concat('*');
-                console.log(activeurl);
-		newjson['primaryPattern'] = activeurl;
-		newjson['setting'] = 'allow';
-		console.log(newjson['primaryPattern']);
+            console.log(activeurl);
+			newjson['primaryPattern'] = activeurl;
+			newjson['setting'] = 'allow';
+			console.log(newjson['primaryPattern']);
 		
-		chrome.contentSettings.javascript.set(newjson);
-		lasttab = activeurl;
-		//});
+			chrome.contentSettings.javascript.set(newjson);
+			lasttab = activeurl;
+			lasttabid = tab.id;
+			chrome.tabs.reload(tab.id);
 
     	});
 
-/*
-	var url = 'http://candybox2.net/*';
-        var json = { };
-	json['primaryPattern'] = url;
-	json['setting'] = 'allow';
-        console.log(json['primaryPattern']);
-	chrome.contentSettings.javascript.set(json);
-	lasttab = url;
-*/
 });
-
-
-
-
-
-
-
-
-/*
-chrome.tabs.onActivated.addListener(function callback(activeInfo){
-	console.log("Active!");
-
-	var url;
-	chrome.tabs.getSelected(null, function(tab) {
-        url = tab.url;
-	console.log(url);
-
-        var activeurl = url.concat('*');
-                console.log(activeurl);
-	chrome.contentSettings.javascript.set({
-                primaryPattern: 'http://candybox2.net/*',
-	        setting: 'allow'
-        });
-
-    });*/
-
-
-	console.log("White Listing!");
-/*        var star = '*';
-        var activeurl = url.concat(star);
-        console.log(url);
-
-        var str1 = String(url);
-        var str2 = "world!";
-        var res = str1.concat(str2);
-        console.log(res);*/
-/*
-	chrome.contentSettings.javascript.set({
-        primaryPattern: url + '*',
-	setting: 'allow'
-    });*/
-
-
-
 
