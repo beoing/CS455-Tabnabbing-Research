@@ -64,6 +64,10 @@ The authors do leave some issues of TabSol unaddressed in their paper.  First, t
 Another extension, NoTabNab created by Seckin Anil Unlu and Kemal Bicakci \cite{NoTabNab}, notifies the user when the favicon or the tab name change as well as when a new layer is added to an inactive tab. 
 \end{comment}
 
+NoTabNab is an addon designed by Secking Anil Unlu and Kemal Bicakci.  Their main objective was to focus on the favicon, page title, and layout changes for each tab, as the authors state that these properties must change in a tabnabbing attack.  In particular, the program looks at important offset and margin values that are calculated for the page after the CSS style rules and properties are applied to each HTML element.  The authors argue that any tabnabbing site must have some influence on these values, and thus they can be used to detect if the site has changed in an attempt of a tabnabbing attack.
+
+The application begins by recording the page titles and favicons for each tab.  NoTabNab then records the important layout values of the topmost page elements on these tabs.  By topmost elements, the authors mean the elements which have the highest value on the z-axis above all other elements, as these are the elements that are most likely to change in a tabnabbing attack.  When the tab focus returns to a tab, the stored values of the tab are compared to the new ones, and if any change is found, the user is passively alerted through highlighting the address bar.  It should also be noted that
+
 \section{Proposal and Methodology}
 \begin{comment}
 Each of these approaches has advantages and disadvantages, but one particular disadvantage all these methods possess is that they are all only detection programs. We believe that a preventative method is a more effective way to combat tabnabbing.
