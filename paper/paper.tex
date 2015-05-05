@@ -94,9 +94,14 @@ The current build of Nabi restricts javascript from running in every tab the use
 
 The only two forms of tabnabbing are through JavaScript and via the scriptless HTML meta tag redirect. Our system currently only prevents the former of the two types of attack, but prevents this attack completely. Previous approaches must be able to detect an active attack and take necessary action, and thus can be circumvented if the attacker is aware of the method's metrics of detection. Nabi can provably prevent all JavaScript tabnabbing attacks before they ever occur by restricting their access to execute only when the user has that tab focused.
 
-However, the scriptless form of the attack can still successfully occur. The current build of Nabi does not detect or block meta tag redirections and 
+
+
+
 
 \section{Conclusion}
+
+We have devleoped a system to block tabnabbing attacks that still allows the user to retain most of the javascript functionality they need to securly browse the internet while without just only detecting and alerting the user. 
+
 
 \end{doublespace}
 
