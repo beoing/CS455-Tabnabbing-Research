@@ -13,7 +13,13 @@
 \thispagestyle{empty}
 
 \begin{abstract}
-  
+Tabnabbing is a phishing technique that attempts to change the look and design of a tab when the user is not currently viewing it so that when the user returns, they will find a seemingly trustworthy form or page requesting their credentials and information.  
+This attack utilizes the user's trust of recently viewed tabs, and the perceived immutability of out-of-focus tabs.
+Tabnabbing attacks change the appearance of tabs by using JavaScript or the HTML meta tag.  
+Previous attempts of addressing tabnabbing have relied upon detecting tabnabbing after it has occurred.  
+Detecting whether a page has changed with the malicious intent of tabnabbing is a complex problem that is difficult to solve without large amounts of processing or false positives.  
+The authors of this paper investigated and developed a preemptive measure to prevent tabnabbing attacks from occurring.  
+The resulting Chrome browser extension, Nabi, prevents any JavaScript or HTML meta tags from running in inactive tabs outside of a trusted whitelist.
 \end{abstract}
 
 \begin{doublespace}
