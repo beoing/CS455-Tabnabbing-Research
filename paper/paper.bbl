@@ -1,25 +1,35 @@
 \begin{thebibliography}{1}
 
+\bibitem{Adler}
+Eitan Adler.
+\newblock Tabnabbing without javascript.
+\newblock
+  \url{http://blog.eitanadler.com/2010/05/tabnabbing-without-javascript.html}.
+\newblock Accessed: 2015-04-19.
+
 \bibitem{TabShots}
-Lieven Desmet Wouter~Joosen Philippe De~Ryck, Nick~Nikiforakis.
-\newblock Tabshots: Client-side detection of tabnabbing attacks, 2013.
-\newblock 978-1-4503-1767-2.
+Philippe De~Ryck, Nick Nikiforakis, Lieven Desmet, and Wouter Joosen.
+\newblock Tabshots: Client-side detection of tabnabbing attacks.
+\newblock In {\em Proceedings of the 8th ACM SIGSAC Symposium on Information,
+  Computer and Communications Security}, ASIA CCS '13, pages 447--456, New
+  York, NY, USA, 2013. ACM.
 
 \bibitem{Raskin}
 Aza Raskin.
 \newblock Tabnabbing: A new type of phishing attack.
-\newblock http://www.azarask.in/blog/post/a-new-type-of-phishing-attack/.
+\newblock \url{http://www.azarask.in/blog/post/a-new-type-of-phishing-attack/}.
 \newblock Accessed: 2015-04-19.
 
 \bibitem{TabSol}
 Amandeep Singh and Somanath Tripathy.
 \newblock Tabsol: An efficient framework to defend tabnabbing.
-\newblock IEEE, 2014.
-\newblock 978-1-4799-8084-0.
+\newblock In {\em Information Technology (ICIT), 2014 International Conference
+  on}, pages 173--178. IEEE, 2014.
 
 \bibitem{NoTabNab}
-Seckin~Anil Unlu and Kemal Bicakci.
-\newblock Notabnab: Protection against the "tabnabbing attack", 2010.
-\newblock 978-1-4244-7760-9.
+Seckin~Anil Unlu and K~Bicakci.
+\newblock Notabnab: Protection against the “tabnabbing attack”.
+\newblock In {\em eCrime Researchers Summit (eCrime), 2010}, pages 1--5. IEEE,
+  2010.
 
 \end{thebibliography}
