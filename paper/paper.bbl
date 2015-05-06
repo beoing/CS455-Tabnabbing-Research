@@ -5,10 +5,21 @@ Lieven Desmet Wouter~Joosen Philippe De~Ryck, Nick~Nikiforakis.
 \newblock Tabshots: Client-side detection of tabnabbing attacks, 2013.
 \newblock 978-1-4503-1767-2.
 
+\bibitem{Raskin}
+Aza Raskin.
+\newblock Tabnabbing: A new type of phishing attack.
+\newblock http://www.azarask.in/blog/post/a-new-type-of-phishing-attack/.
+\newblock Accessed: 2015-04-19.
+
 \bibitem{TabSol}
 Amandeep Singh and Somanath Tripathy.
 \newblock Tabsol: An efficient framework to defend tabnabbing.
 \newblock IEEE, 2014.
 \newblock 978-1-4799-8084-0.
+
+\bibitem{NoTabNab}
+Seckin~Anil Unlu and Kemal Bicakci.
+\newblock Notabnab: Protection against the "tabnabbing attack", 2010.
+\newblock 978-1-4244-7760-9.
 
 \end{thebibliography}
